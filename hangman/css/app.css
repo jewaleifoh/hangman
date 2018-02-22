@@ -1,0 +1,61 @@
+body {
+
+	font-size: 16px;
+}
+.board {
+
+	position: relative;
+	height: 20em;
+	width: 20em;
+	border: 1px solid #eaeaea;
+	padding: 1em;
+}
+
+.controls {
+
+	position: absolute;
+	bottom: 0;
+	padding: 5%;
+}
+
+.title {
+
+	text-align: center;
+}
+
+.results {
+
+	padding: 5%;
+	text-align: center;
+	border-radius: 3%;
+	
+}
+
+.won {
+
+	background-color: #007700;
+}
+
+.won span {
+
+	font-weight: bold;
+	color: #ffffff;
+}
+
+
+.lost {
+
+	background-color: #770000;
+}
+
+.lost span {
+
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.word {
+
+	font-size: 3em;
+	text-align: center;
+}
