@@ -316,7 +316,6 @@ var Hangman = exports.Hangman = function () {
 		value: function check() {
 
 			var game = 0;
-			console.log(this.word, this.wordWithGuesses());
 			if (this.word == this.wordWithGuesses()) {
 
 				game = 1;

@@ -134,7 +134,6 @@ export class Hangman {
 	check() {
 
 		let game = 0;
-		console.log(this.word, this.wordWithGuesses());
 		if(this.word == this.wordWithGuesses()){
 
 			game = 1;

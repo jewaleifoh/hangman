@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let hangman;
     let $board = document.querySelector('.board');
 	let $word = $board.querySelector('.word span');
-	let $send = $board.querySelector('#send');
+	let $send = $board.querySelector('#send'); 
 	let $reset = $board.querySelector('#reset');
 	let $guess = $board.querySelector('input');
 	let $screen = $board.querySelector('.results');
