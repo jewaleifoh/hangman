@@ -82,13 +82,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	var $guess = $board.querySelector('input');
 	var $screen = $board.querySelector('.results');
 	var $results = $board.querySelector('.results span');
+	var $player = $board.querySelector('.player');
 	var letter = void 0;
+	var tries = 0;
 
 	//let url = 'http://watchout4snakes.com/wo4snakes/Random/RandomWord'; //Get a source for random words
 	var url = 'source';
 
 	//Initialize the game
 	var init = function init() {
+
+		tries = 0;
+		$player.className = '';
+		$player.classList.add('player');
 
 		getWord().then(function (word) {
 			hangman = new _hangman.Hangman(word);
@@ -122,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		hangman.guess(letter);
 
+		//Update player image if the guess is wrong.
+		updatePlayer(hangman.getAttempts());
+
 		$guess.value = '';
 
 		$word.textContent = hangman.wordWithGuesses();
@@ -146,6 +155,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		init();
 	});
+
+	var updatePlayer = function updatePlayer(status) {
+
+		switch (status) {
+
+			case 1:
+
+				$player.classList.add('one');
+
+				break;
+
+				$player.classList.remove('one');
+				$player.classList.add('two');
+
+			case 2:
+
+				$player.classList.remove('one');
+				$player.classList.add('two');
+				break;
+
+			case 3:
+
+				$player.classList.remove('two');
+				$player.classList.add('three');
+				break;
+
+			case 4:
+
+				$player.classList.remove('three');
+				$player.classList.add('four');
+				break;
+
+			case 5:
+
+				$player.classList.remove('four');
+				$player.classList.add('five');
+				break;
+
+			case 6:
+
+				$player.classList.remove('five');
+				$player.classList.add('six');
+				break;
+
+			case 7:
+
+				$player.classList.remove('six');
+				$player.classList.add('seven');
+				break;
+
+			default:
+
+		}
+	};
 
 	init();
 });
@@ -325,6 +388,18 @@ var Hangman = exports.Hangman = function () {
 			}
 
 			return game;
+		}
+
+		/**
+   * [getAttempts Indicates the currrent number of attempts.]
+   * @return {[Integer]} [The number of attempts that have been made.]
+   */
+
+	}, {
+		key: 'getAttempts',
+		value: function getAttempts() {
+
+			return this.attempts;
 		}
 
 		/**

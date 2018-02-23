@@ -146,6 +146,17 @@ export class Hangman {
 		return game;
 	}
 
+
+	/**
+	 * [getAttempts Indicates the currrent number of attempts.]
+	 * @return {[Integer]} [The number of attempts that have been made.]
+	 */
+	getAttempts() {
+
+		return this.attempts;
+	}
+	
+
 	/**
 	 * [__replaceAt Replace the character at a given position.]
 	 * @param  {[Integer]} index [The letter will be replaced.]

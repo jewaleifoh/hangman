@@ -10,13 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	let $guess = $board.querySelector('input');
 	let $screen = $board.querySelector('.results');
 	let $results = $board.querySelector('.results span');
+	let $player = $board.querySelector('.player');
 	let letter;
+	let tries = 0;
 
 	//let url = 'http://watchout4snakes.com/wo4snakes/Random/RandomWord'; //Get a source for random words
 	let url = 'source';
 
 	//Initialize the game
 	const init = () => {
+
+		tries = 0;
+		$player.className= '';
+		$player.classList.add('player');
 
 		getWord().then(word => {
 			hangman = new Hangman(word);
@@ -55,7 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		letter = $guess.value;
 
+			
 			hangman.guess(letter);
+
+			//Update player image if the guess is wrong.
+			updatePlayer(hangman.getAttempts());
+			
 
 			$guess.value = '';
 
@@ -85,6 +96,66 @@ document.addEventListener('DOMContentLoaded', () => {
 		init();
 	
 	});
+
+	const updatePlayer = status => {
+
+
+		switch(status) {
+
+			case 1:
+
+				$player.classList.add('one');
+
+			break;
+
+				$player.classList.remove('one');
+				$player.classList.add('two');
+
+			case 2:
+
+				$player.classList.remove('one');
+				$player.classList.add('two');
+			break;
+
+
+			case 3:
+
+				$player.classList.remove('two');
+				$player.classList.add('three');
+			break;
+
+
+			case 4:
+
+				$player.classList.remove('three');
+				$player.classList.add('four');
+			break;
+
+
+			case 5:
+
+				$player.classList.remove('four');
+				$player.classList.add('five');
+			break;
+
+
+			case 6:
+
+				$player.classList.remove('five');
+				$player.classList.add('six');
+			break;
+
+
+			case 7:
+
+				$player.classList.remove('six');
+				$player.classList.add('seven');
+			break;
+
+			default:
+
+		}
+	};
 
 	init();
 

@@ -3,7 +3,6 @@ body {
 	font-size: 16px;
 	padding: 3%;
 }
-
 .board {
 	position: relative;
 	max-width: 50vw;
@@ -13,59 +12,6 @@ body {
 	padding: 1em;
 	margin: 0 auto;
 	background-color: #d1f2eb;
-}
-
-.player {
-
-	width: 120px;
-	height: 100px;
-	position: absolute;
-	right: calc(50% - 60px);
-	top: 45%;
-	background: url('../images/hangman.png') 3% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.one {
-
-	background: url('../images/hangman.png') 18% 50%;
-	background-repeat: no-repeat;	
-}
-
-.player.two {
-
-	background: url('../images/hangman.png') 32% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.three {
-
-	background: url('../images/hangman.png') 46% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.four {
-
-	background: url('../images/hangman.png') 60% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.five {
-
-	background: url('../images/hangman.png') 75% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.six {
-
-	background: url('../images/hangman.png') 90% 50%;
-	background-repeat: no-repeat;
-}
-
-.player.seven {
-
-	background: url('../images/hangman.png') 105% 50%;
-	background-repeat: no-repeat;
 }
 
 .controls {
