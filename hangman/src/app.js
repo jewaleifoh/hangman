@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let status = hangman.check();
 
+			$results.textContent = hangman.wrongGuesses();
+
 		if(status ===1 ) {
 
 

@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		var status = hangman.check();
 
+		$results.textContent = hangman.wrongGuesses();
+
 		if (status === 1) {
 
 			$results.textContent = 'You won!';
